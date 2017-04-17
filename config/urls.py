@@ -19,7 +19,8 @@ urlpatterns = [
     url(r'^users/', include('bb8.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
 
-    # Your stuff: custom urls includes go here
+    # BB8 control
+    url(r'^control/', include('bb8.control.urls'))
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
