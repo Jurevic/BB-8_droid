@@ -16,7 +16,7 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     # User management
-    url(r'^users/', include('ui.users.urls', namespace='users')),
+    url(r'^users/', include('bb8.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
