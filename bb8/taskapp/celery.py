@@ -11,7 +11,7 @@ if not settings.configured:
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')  # pragma: no cover
 
 
-app = Celery('bb8')
+app = Celery('ui')
 
 
 class CeleryConfig(AppConfig):
@@ -25,9 +25,9 @@ class CeleryConfig(AppConfig):
         installed_apps = [app_config.name for app_config in apps.get_app_configs()]
         app.autodiscover_tasks(lambda: installed_apps, force=True)
 
-        
 
-        
+
+
 
 
 @app.task(bind=True)

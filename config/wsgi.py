@@ -19,9 +19,9 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 # This allows easy placement of apps within the interior
-# bb8 directory.
+# ui directory.
 app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
-sys.path.append(os.path.join(app_path, 'bb8'))
+sys.path.append(os.path.join(app_path, 'ui'))
 
 
 

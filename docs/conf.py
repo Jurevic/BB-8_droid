@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# bb8 documentation build configuration file, created by
+# ui documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'bb8'
+project = 'ui'
 copyright = """2017, none"""
 
 # The version info for the project you're documenting, acts as replacement for
@@ -187,8 +187,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'bb8.tex',
-     'bb8 Documentation',
+     'ui.tex',
+     'ui Documentation',
      """none""", 'manual'),
 ]
 
@@ -218,7 +218,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'bb8', 'bb8 Documentation',
+    ('index', 'ui', 'ui Documentation',
      ["""none"""], 1)
 ]
 
@@ -232,8 +232,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'bb8', 'bb8 Documentation',
-     """none""", 'bb8',
+    ('index', 'ui', 'ui Documentation',
+     """none""", 'ui',
      """BB8 unit from star wars""", 'Miscellaneous'),
 ]
 

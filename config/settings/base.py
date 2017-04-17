@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for bb8 project.
+Django settings for ui project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -12,8 +12,8 @@ from __future__ import absolute_import, unicode_literals
 
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (bb8/config/settings/base.py - 3 = bb8/)
-APPS_DIR = ROOT_DIR.path('bb8')
+ROOT_DIR = environ.Path(__file__) - 3  # (ui/config/settings/base.py - 3 = ui/)
+APPS_DIR = ROOT_DIR.path('ui')
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
@@ -57,7 +57,7 @@ THIRD_PARTY_APPS = [
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
-    'bb8.users.apps.UsersConfig',
+    'ui.users.apps.UsersConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -79,7 +79,7 @@ MIDDLEWARE = [
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'bb8.contrib.sites.migrations'
+    'sites': 'ui.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -112,7 +112,7 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///bb8'),
+    'default': env.db('DATABASE_URL', default='postgres:///ui'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -256,8 +256,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
-ACCOUNT_ADAPTER = 'bb8.users.adapters.AccountAdapter'
-SOCIALACCOUNT_ADAPTER = 'bb8.users.adapters.SocialAccountAdapter'
+ACCOUNT_ADAPTER = 'ui.users.adapters.AccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'ui.users.adapters.SocialAccountAdapter'
 
 # Custom user app defaults
 # Select the correct user model
@@ -269,7 +269,7 @@ LOGIN_URL = 'account_login'
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
 ########## CELERY
-INSTALLED_APPS += ['bb8.taskapp.celery.CeleryConfig']
+INSTALLED_APPS += ['ui.taskapp.celery.CeleryConfig']
 BROKER_URL = env('CELERY_BROKER_URL', default='django://')
 if BROKER_URL == 'django://':
     CELERY_RESULT_BACKEND = 'redis://'
