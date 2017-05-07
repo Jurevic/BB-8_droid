@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% block head_title %}{% endblock head_title %}{% endblock title %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6 offset-md-3 move">
+    {% block inner %}
+      {% csrf_token %}
+      <iframe src="http://192.168.1.99:8000/index.html" height="560" width="680"></iframe>
+      <input type="text" id="speed_value" disabled value="100">
+      <input type="range" id="speed" min="0" max="255" value="100">
+      <button type="button" value="left">Left</button>
+      <button type="button" value="right">Right</button>
+      <button type="button" value="up">Up</button>
+      <button type="button" value="down">Down</button>
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
