@@ -19,3 +19,37 @@ Issues with the above approach:
 4. Undocumented: No mention in the documentation, or it's too hard for me to find
 */
 $('.form-group').removeClass('row');
+
+function move(direction) {
+    $.ajax({
+        type: "POST",
+        url: '/control/',
+        data: {
+            'direction': direction,
+            'speed': $("#speed").val(),
+            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]").val()
+        },
+        success: function(data){
+            console.log(data)
+        }
+    });
+}
+
+$("#speed").on("change", function(){
+    $("#speed_value").val($("#speed").val());
+});
+
+// Robot movement on mouse hold
+var timeout = 0;
+
+$('.move button').mousedown(function(){
+    direction = $(this).val();
+    timeout = setInterval(function(){
+        move(direction)
+    }, 500);
+});
+
+$(document).mouseup(function(){
+    clearInterval(timeout);
+});
+

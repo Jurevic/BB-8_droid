@@ -283,3 +283,8 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+# Control settings for movement
+CLIENT_ID = '340026000247343339373536'
+CLIENT_SECRET = '9ee747e972c0b3d18658411eada4298d72b245c5'
+TOKEN_URL = 'https://api.particle.io/v1/devices/'
